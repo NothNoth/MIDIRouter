@@ -25,7 +25,7 @@ jobs:
       run: go test -v ./...
 
     - name: Ready to ship
-      run: ls -R /Users/runner/
+      run: cd /Users/runner/work/MIDIRouter/MIDIRouter/cmd/midirouter/ && go build
 
     - name: Push Binary
       uses: actions/upload-artifact@v2
