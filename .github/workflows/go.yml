@@ -24,6 +24,9 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: Ready to ship
+      run: ls -R /Users/runner/work/
+
     - name: Push Binary
       uses: actions/upload-artifact@v2
       with:
