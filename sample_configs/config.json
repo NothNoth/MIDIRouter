@@ -1,0 +1,163 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": true,
+    "Rules": [
+        {
+            "Name": "Note On rule test",
+            "Filter": {
+                "Name": "Note On (all)",
+                "MsgType": "Note On",
+                "Channel": "1",
+                "Settings" : {
+                    "Note": "*",
+                    "Velocity": "127"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Note Off rule test",
+            "Filter": {
+                "Name": "Note Off (all)",
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings" : {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Aftertouch rule test",
+            "Filter": {
+                "Name": "Aftertouch (all)",
+                "MsgType": "Aftertouch",
+                "Channel": "*",
+                "Settings" : {
+                    "Pressure": "50"
+                }
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Control Change to DP4 Sysex",
+            "Filter": {
+                "Name": "Control Change (all)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "1",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 16383,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "DP4 Param vol AB [chan - 00 - param]",
+                "MsgType":"SysEx",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Ensoniq14To32",
+                    "Prefix": "F00F40000001000100000002",
+                    "Suffix": "F7"
+                }
+            }
+        },
+        {
+            "Name": "Program Change rule test",
+            "Filter": {
+                "Name": "Program Change (all)",
+                "MsgType": "Program Change",
+                "Channel": "1",
+                "Settings" : {
+                    "ProgramNumber": "31"
+                }
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Channel Pressure rule test",
+            "Filter": {
+                "Name": "Channel Pressure (all)",
+                "MsgType": "Channel Pressure",
+                "Channel": "1",
+                "Settings" : {
+                    "Pressure": "14"
+                }
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Pitch Wheel rule test",
+            "Filter": {
+                "Name": "Pitch Wheel (all)",
+                "MsgType": "Pitch Wheel",
+                "Channel": "*",
+                "Settings" : {
+                    "Pitch": "744"
+                }
+            },
+            "Generator": {
+                "Name": "Note On generator test",
+                "MsgType":"Note On",
+                "Channel": "7",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        }
+    ]
+}

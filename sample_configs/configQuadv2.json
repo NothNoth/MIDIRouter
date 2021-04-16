@@ -1,0 +1,126 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": false,
+    "Verbose": true,
+    "Rules": [
+        {
+            "Name": "Program Change forward",
+            "Filter": {
+                "Name": "Program Change (all)",
+                "MsgType": "Program Change",
+                "Channel": "*",
+                "Settings" : {
+                    "ProgramNumber": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "Program Change forward",
+                "MsgType": "Program Change",
+                "Channel": "*",
+                "Settings": {
+                    "ProgramNumber": "$"
+                }
+            }
+        },
+        {
+            "Name": "CC0 (Short pre delay)",
+            "Filter": {
+                "Name": "Control Change (0)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "0",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 2778,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "0",
+                    "Value": "$"
+                }
+            }
+        },
+        {
+            "Name": "CC1 (Short Decay)",
+            "Filter": {
+                "Name": "Control Change (1)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "1",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 2778,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "1",
+                    "Value": "$"
+                }
+            }
+        },
+        {
+            "Name": "CC2 (Short Density)",
+            "Filter": {
+                "Name": "Control Change (1)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "2",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 12900,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "2",
+                    "Value": "$"
+                }
+            }
+        }
+    ]
+}

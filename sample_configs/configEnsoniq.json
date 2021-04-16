@@ -1,0 +1,108 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": false,
+    "SendLimitMs": 100,
+    "Rules": [
+        {
+            "Name": "Program Change forward",
+            "Filter": {
+                "Name": "Program Change (all)",
+                "MsgType": "Program Change",
+                "Channel": "*",
+                "Settings" : {
+                    "ProgramNumber": "*"
+                }
+            },
+            "Generator": {
+                "Name": "Program Change forward",
+                "MsgType": "Program Change",
+                "Channel": "*",
+                "Settings": {
+                    "ProgramNumber": "$"
+                }
+            }
+        },
+        {
+            "Name": "Control Change to DP4 Sysex",
+            "Filter": {
+                "Name": "Control Change (3)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "3",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "DP4 Param vol AB [chan - 00 - param]",
+                "MsgType":"SysEx",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Ensoniq14To32",
+                    "Prefix": "F00F40000001000100000003",
+                    "Suffix": "F7"
+                }
+            }
+        },
+        {
+            "Name": "Control Change to DP4 Sysex",
+            "Filter": {
+                "Name": "Control Change (4)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "4",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "DP4 Param vol AB [chan - 00 - param]",
+                "MsgType":"SysEx",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Ensoniq14To32",
+                    "Prefix": "F00F40000001000100000004",
+                    "Suffix": "F7"
+                }
+            }
+        },
+        {
+            "Name": "Control Change to DP4 Sysex",
+            "Filter": {
+                "Name": "Control Change (12)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "12",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "DP4 Param vol AB [chan - 00 - param]",
+                "MsgType":"SysEx",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Ensoniq14To32",
+                    "Prefix": "F00F4000000100010000000c",
+                    "Suffix": "F7"
+                }
+            }
+        }
+    ]
+}
