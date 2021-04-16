@@ -9,7 +9,7 @@ In short, MIDIRouter is able to:
   - Watch for MIDI messages on an input interface
   - Replay or not these eventually transformed messages on an output MIDI interface
 
-_Mmhh-kay.. can you give me some examples?"_
+__Mmhh-kay.. can you give me some examples?"__
 
 The most simple use is to replay all messages from the input interface to the output interface.
 
@@ -17,11 +17,11 @@ Now you may simply want to replay all messages on MIDI channel 1 to the output i
 
 But maybe you want to replay all those MIDI messages on channel 1 to the output interface but on channel 5 (and ignore others).
 
-_Hey, but can I transform a Pitch bend event to an Aftertouch event?"_
+__Hey, but can I transform a Pitch bend event to an Aftertouch event?"__
 
 Yes, you can!
 
-_Hey, but can I transform a Control Change message with number 4 received on Channel 7 to a Sysex messages, with value encoded into 14 bits?"_
+__Hey, but can I transform a Control Change message with number 4 received on Channel 7 to a Sysex messages, with value encoded into 14 bits?"__
 
 Yes, you can!
 
