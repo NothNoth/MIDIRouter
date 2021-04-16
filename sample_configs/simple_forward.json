@@ -1,0 +1,7 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": true,
+    "Verbose": true,
+    "Rules": [ ]
+}

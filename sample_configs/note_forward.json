@@ -1,0 +1,56 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": false,
+    "Verbose": false,
+    "Rules": [
+        {
+            "Name": "Match any NoteOn",
+            "Filter": {
+                "Name": "Note On in",
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "Note On out",
+                "MsgType":"Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Match any NoteOff",
+            "Filter": {
+                "Name": "Note Off in",
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "Note Off out",
+                "MsgType":"Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "*",
+                    "Velocity": "*"
+                }
+            }
+        }
+    ]
+}
