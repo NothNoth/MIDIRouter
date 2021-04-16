@@ -171,7 +171,7 @@ func LoadConfig(configPath string) (*router.MIDIRouter, error) {
 			newRule.SetFilter(f)
 			break
 		default:
-			return nil, errors.New("Pailed to add rule, invalid filter type.")
+			return nil, errors.New("Failed to add rule, invalid filter type: " + r.Filter.MsgType)
 		}
 
 		//Load Transform

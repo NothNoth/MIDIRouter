@@ -49,6 +49,17 @@ I plan to:
   - Add a few commented configuration examples
   - Allow interconnection of two MIDIRouter instances, over an IP network (so yes, you would be able to filter, tranform and re-emit MIDI messages to another MIDI device, somewhere on the Internet :) )
 
+## Tutorials
+
+I'm setting up a set of Use cases with their associated configuration file.
+
+  - ["Simple Forward from a MIDI interface to another"](https://radix-studio.fr/blog/2021/04/16/midirouter-by-example/)
+  - ["Note On / Note Off forward only"](https://radix-studio.fr/blog/2021/04/16/midirouter-by-example/)
+  - "Pitch Bend MIDI channel remap" (soon)
+  - "Transform a Pitch Bend to an Aftertouch event" (soon)
+  - "Using notes to emit Program Change events" (soon)
+  - "Generate a Sysex message from a Control Change event" (soon)
+  - "Using Transform to change value ranges" (soon)
 
 # Configuration
 
