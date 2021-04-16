@@ -28,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: midi-router
-        path: cmd/midirouter/midirouter
+        path: /Users/runner/work/MIDIRouter/MIDIRouter/cmd/midirouter/midirouter
