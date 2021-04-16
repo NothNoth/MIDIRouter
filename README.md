@@ -9,7 +9,7 @@ In short, MIDIRouter is able to:
   - Watch for MIDI messages on an input interface
   - Replay or not these eventually transformed messages on an output MIDI interface
 
-_Mmhh-kay.. can yu give me some examples?"_
+_Mmhh-kay.. can you give me some examples?"_
 
 The most simple use is to replay all messages from the input interface to the output interface.
 
@@ -17,11 +17,11 @@ Now you may simply want to replay all messages on MIDI channel 1 to the output i
 
 But maybe you want to replay all those MIDI messages on channel 1 to the output interface but on channel 5 (and ignore others).
 
-_Hey, but can I transform a Pitch bend event to an Aftertouch event?"
+_Hey, but can I transform a Pitch bend event to an Aftertouch event?"_
 
 Yes, you can!
 
-_Hey, but can I transform a Control Change message with number 4 received on Channel 7 to a Sysex messages, with value encoded into 14 bits?"
+_Hey, but can I transform a Control Change message with number 4 received on Channel 7 to a Sysex messages, with value encoded into 14 bits?"_
 
 Yes, you can!
 
@@ -236,62 +236,3 @@ The following values can also be set:
   - * : use the original value. Will only be valid if filter is a NoteOn of NoteOff message.
   - $ : use the extracted value by the filter
 
-
-# Reverse & co
-
-## NRPN:
-
---> Value 42:
-B0 63 00 <-- MSB (Sur EC4: N:MSB:LSB)
-B0 62 59 <-- LSB
-B0 06 2A <-- Value
-
--> Value  993:
-B0 63 00 <-- MSB (Sur EC4: N:MSB:LSB)
-B0 62 59 <-- LSB
-B0 06 7F <-- 0111 1111
-B0 26 11 <-- 0001 0001 "0x26: fine adjustment"
-993 ->  0011 1110 0001
-
--> Value 1000:
-B0 63 00 <-- MSB (Sur EC4: N:MSB:LSB)
-B0 62 59 <-- LSB
-B0 06 7F <-- 0111 1111
-B0 26 11 <-- 0111 1111 "0x26: fine adjustment"
-
-=> Projection de 14 bits sur 1000
-
-## CCAh
-
-Deux messages:
-
--> Value 15
-B0 0A 01 -> B0 (CC chan0), 0A (controler number 0x0A), 01 (MSB)
-B0 2A 67 -> B0 (CC chan0), 2A (controler number 0x0A), 67 (LSB)
-
-=> Idem, mapping de 14 bits sur 1000
-
-
-Prog 52
-00 prog
-01 mix
-02 volume
-03 - 12 ? env levels
-13 damping
-14 bandwidth
-15 Non Lin diffusion 1
-16 Non Lin diffusion 2
-17 Density 1
-18 Density 2
-19 Prim Send
-20
-
-Prog 54 / Hall
-00 prog
-01 mix
-02 volume
-03  decay (2,1s)
-04 predelay
-05 lf decay time
-06 hf damping
-07 hf bw
