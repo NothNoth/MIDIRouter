@@ -19,6 +19,7 @@ jobs:
         go-version: 1.15
 
     - name: Build
+      run: ln -s /home/runner/work/MIDIRouter/MIDIRouter /home/runner/go/src/
       run: go build -v ./...
 
     - name: Test
