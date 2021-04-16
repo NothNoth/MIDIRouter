@@ -26,6 +26,6 @@ jobs:
 
     - name: Push Binary
       uses: actions/upload-artifact@v2
-          with:
-            name: midi-router
-            path: cmd/midirouter/midirouter
+      with:
+        name: midi-router
+        path: cmd/midirouter/midirouter
