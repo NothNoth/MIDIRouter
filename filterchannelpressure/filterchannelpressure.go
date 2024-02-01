@@ -23,6 +23,10 @@ type FilterChannelPressureConfig struct {
 	Pressure string
 }
 
+const (
+	highNibble = 0xD0
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterChannelPressure, error) {
 	var f FilterChannelPressure
 	var conf FilterChannelPressureConfig
@@ -71,7 +75,7 @@ func (f *FilterChannelPressure) QuickMatch(msgType filter.FilterMsgType, channel
 }
 
 func (f *FilterChannelPressure) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 2 {
+	if len(packet.Data) != 2 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 

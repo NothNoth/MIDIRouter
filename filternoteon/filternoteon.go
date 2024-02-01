@@ -27,6 +27,10 @@ type FilterNoteOnConfig struct {
 	Velocity string
 }
 
+const (
+	highNibble = 0x80
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterNoteOn, error) {
 	var f FilterNoteOn
 	var conf FilterNoteOnConfig
@@ -95,7 +99,7 @@ func (f *FilterNoteOn) QuickMatch(msgType filter.FilterMsgType, channel filter.F
 }
 
 func (f *FilterNoteOn) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 3 {
+	if len(packet.Data) != 3 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 

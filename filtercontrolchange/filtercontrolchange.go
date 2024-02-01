@@ -39,6 +39,10 @@ type FilterControlChangeConfig struct {
 	Mode             string
 }
 
+const (
+	highNibble = 0xB0
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterControlChange, error) {
 	var f FilterControlChange
 	var conf FilterControlChangeConfig
@@ -131,7 +135,7 @@ func (f *FilterControlChange) QuickMatch(msgType filter.FilterMsgType, channel f
 }
 
 func (f *FilterControlChange) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 3 {
+	if len(packet.Data) != 3 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 

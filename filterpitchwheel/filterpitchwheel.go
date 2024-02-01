@@ -23,6 +23,10 @@ type FilterPitchWheelConfig struct {
 	Pitch string
 }
 
+const (
+	highNibble = 0xE0
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterPitchWheel, error) {
 	var f FilterPitchWheel
 	var conf FilterPitchWheelConfig
@@ -72,7 +76,7 @@ func (f *FilterPitchWheel) QuickMatch(msgType filter.FilterMsgType, channel filt
 }
 
 func (f *FilterPitchWheel) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 3 {
+	if len(packet.Data) != 3 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 	low := uint16(packet.Data[1])

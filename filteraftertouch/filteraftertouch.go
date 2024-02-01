@@ -23,6 +23,10 @@ type FilterAftertouchConfig struct {
 	Pressure string
 }
 
+const (
+	highNibble = 0x90
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterAftertouch, error) {
 	var f FilterAftertouch
 	var conf FilterAftertouchConfig
@@ -71,7 +75,7 @@ func (f *FilterAftertouch) QuickMatch(msgType filter.FilterMsgType, channel filt
 }
 
 func (f *FilterAftertouch) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 2 {
+	if len(packet.Data) != 2 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 

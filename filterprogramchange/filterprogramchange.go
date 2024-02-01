@@ -23,6 +23,10 @@ type FilterProgramChangeConfig struct {
 	ProgramNumber string
 }
 
+const (
+	highNibble = 0xC0
+)
+
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterProgramChange, error) {
 	var f FilterProgramChange
 	var conf FilterProgramChangeConfig
@@ -71,7 +75,7 @@ func (f *FilterProgramChange) QuickMatch(msgType filter.FilterMsgType, channel f
 }
 
 func (f *FilterProgramChange) Match(packet coremidi.Packet) (match filterinterface.FilterMatchResult, value uint16) {
-	if len(packet.Data) != 2 {
+	if len(packet.Data) != 2 || packet.Data[0]&0xF0 != highNibble {
 		return filterinterface.FilterMatchResult_NoMatch, 0
 	}
 
