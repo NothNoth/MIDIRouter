@@ -66,7 +66,7 @@ func (relay *MIDIRouter) SetSendLimit(delay time.Duration) {
 func (relay *MIDIRouter) Start() {
 
 	for {
-
+		time.Sleep(1 * time.Millisecond)
 	}
 }
 

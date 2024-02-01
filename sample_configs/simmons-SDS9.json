@@ -1,8 +1,8 @@
 {
-    "SourceDevice": "SDS9Virt",
-    "DestinationDevice": "Port 1",
+    "SourceDevice": "Apple Inc./SDS9Virt",
+    "DestinationDevice": "ESI Audiotechnik GmbH/Port 1",
     "DefaultPassthrough": false,
-    "Verbose": false,
+    "Verbose": true,
     "Rules": [
         {
             "Filter": {

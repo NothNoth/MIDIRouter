@@ -17,7 +17,7 @@ func main() {
 			panic(err)
 		}
 		for _, source := range sources {
-			fmt.Println("  ", source.Name())
+			fmt.Println("  " + source.Manufacturer() + "/" + source.Name())
 		}
 
 		fmt.Println("MIDI outputs:")
@@ -26,7 +26,7 @@ func main() {
 			panic(err)
 		}
 		for _, destination := range destinations {
-			fmt.Println("  ", destination.Name())
+			fmt.Println("  " + destination.Manufacturer() + "/" + destination.Name())
 		}
 
 		return
