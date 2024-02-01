@@ -11,7 +11,6 @@ import (
 )
 
 type GenNoteOn struct {
-	name    string
 	channel filter.FilterChannel
 
 	noteReuse   bool
@@ -28,10 +27,9 @@ type FilterNoteOnConfig struct {
 	Velocity string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenNoteOn, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenNoteOn, error) {
 	var g GenNoteOn
 	var conf FilterNoteOnConfig
-	g.name = name
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)

@@ -12,8 +12,6 @@ import (
 )
 
 type FilterPitchWheel struct {
-	name string
-
 	channel    filter.FilterChannel
 	channelAny bool
 
@@ -25,11 +23,10 @@ type FilterPitchWheelConfig struct {
 	Pitch string
 }
 
-func New(name string, channel filter.FilterChannel, config json.RawMessage) (*FilterPitchWheel, error) {
+func New(channel filter.FilterChannel, config json.RawMessage) (*FilterPitchWheel, error) {
 	var f FilterPitchWheel
 	var conf FilterPitchWheelConfig
 
-	f.name = name
 	f.channel = channel
 	err := json.Unmarshal([]byte(config), &conf)
 	if err != nil {

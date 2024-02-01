@@ -11,7 +11,6 @@ import (
 )
 
 type GenProgramChange struct {
-	name    string
 	channel filter.FilterChannel
 
 	programNumberReuse   bool
@@ -23,10 +22,10 @@ type FilterProgramChangeConfig struct {
 	ProgramNumber string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenProgramChange, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenProgramChange, error) {
 	var g GenProgramChange
 	var conf FilterProgramChangeConfig
-	g.name = name
+
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)

@@ -19,7 +19,6 @@ const (
 )
 
 type FilterControlChange struct {
-	name       string
 	mode       ControlChangeMode
 	channel    filter.FilterChannel
 	channelAny bool
@@ -40,11 +39,10 @@ type FilterControlChangeConfig struct {
 	Mode             string
 }
 
-func New(name string, channel filter.FilterChannel, config json.RawMessage) (*FilterControlChange, error) {
+func New(channel filter.FilterChannel, config json.RawMessage) (*FilterControlChange, error) {
 	var f FilterControlChange
 	var conf FilterControlChangeConfig
 
-	f.name = name
 	f.mode = controlChangeModeStandard
 	f.channel = channel
 	err := json.Unmarshal([]byte(config), &conf)

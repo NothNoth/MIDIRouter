@@ -83,7 +83,7 @@ func (relay *MIDIRouter) onPacket(source coremidi.Source, packet coremidi.Packet
 			source.Entity().Device().Name(),
 			source.Manufacturer(),
 			source.Name(),
-			packet.Data,
+			hex.EncodeToString(packet.Data),
 		)
 	}
 
@@ -93,11 +93,13 @@ func (relay *MIDIRouter) onPacket(source coremidi.Source, packet coremidi.Packet
 			continue
 		}
 
-		//Stop on firt rule success
-		match, newPacket := r.Match(packet)
+		//Stop on first rule success
+		match, newPacket := r.Match(packet, relay.verbose)
 		if match == rule.RuleMatchResultMatchInject {
-			fmt.Println("-> Sending generated packet :")
-			fmt.Println(hex.Dump(newPacket.Data))
+			if relay.verbose {
+				fmt.Println("-> Sending generated packet :")
+				fmt.Println(hex.Dump(newPacket.Data))
+			}
 
 			if time.Since(relay.lastMIDIMsg) <= relay.sendLimit {
 				fmt.Println("Ignoring midi message (send limit)")
@@ -111,6 +113,10 @@ func (relay *MIDIRouter) onPacket(source coremidi.Source, packet coremidi.Packet
 			ruleMAtched = true
 			break
 		}
+	}
+
+	if (ruleMAtched == false) && (relay.verbose == true) {
+		fmt.Println("-> No match")
 	}
 
 	//no match, apply passthrough if set

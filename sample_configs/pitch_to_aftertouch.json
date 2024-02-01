@@ -1,0 +1,30 @@
+{
+    "SourceDevice": "Faderfox EC4",
+    "DestinationDevice": "Périphérique MIDI USB",
+    "DefaultPassthrough": false,
+    "Verbose": false,
+    "Rules": [
+        {
+            "Name": "Pitch Wheel to Aftertouch",
+            "Filter": {
+                "Name": "All Pitch Wheel",
+                "MsgType": "Pitch Wheel",
+                "Channel": "*",
+                "Settings": {
+                    "Pitch": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "Name": "Aftertouch out",
+                "MsgType":"Aftertouch",
+                "Channel": "*",
+                "Settings": {
+                    "Pressure": "$"
+                }
+            }
+        }
+    ]
+}

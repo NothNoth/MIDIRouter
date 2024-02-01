@@ -18,7 +18,6 @@ const (
 )
 
 type GenControlChange struct {
-	name    string
 	channel filter.FilterChannel
 	mode    ControlChangeMode
 
@@ -37,10 +36,10 @@ type FilterControlChangeConfig struct {
 	Value            string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenControlChange, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenControlChange, error) {
 	var g GenControlChange
 	var conf FilterControlChangeConfig
-	g.name = name
+
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)

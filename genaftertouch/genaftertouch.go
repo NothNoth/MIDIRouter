@@ -11,7 +11,6 @@ import (
 )
 
 type GenAftertouch struct {
-	name    string
 	channel filter.FilterChannel
 
 	pressureReuse   bool
@@ -23,10 +22,10 @@ type FilterAftertouchConfig struct {
 	Pressure string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenAftertouch, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenAftertouch, error) {
 	var g GenAftertouch
 	var conf FilterAftertouchConfig
-	g.name = name
+
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)

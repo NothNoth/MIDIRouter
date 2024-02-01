@@ -1,0 +1,578 @@
+{
+    "SourceDevice": "SDS9Virt",
+    "DestinationDevice": "Port 1",
+    "DefaultPassthrough": false,
+    "Verbose": false,
+    "Rules": [
+        {
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "35",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "35",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Kick C1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "36",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Kick C1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "36",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Snare A#0 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "34",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Snare A#0 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "34",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Snare D1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "38",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Snare D1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "38",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim E1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim E1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "40",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim C#1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "37",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim C#1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "37",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim G#0 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "32",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Rim G#0 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "32",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Low F1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "41",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "55",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Low F1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "41",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "55",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Low G1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "43",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "55",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Low G1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "43",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "55",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Med A1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "60",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Med A1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "45",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "60",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Med B1 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "47",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "60",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Med B1 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "47",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "60",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Hi C2 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "48",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "65",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Hi C2 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "48",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "65",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Hi D2 On",
+            "Filter": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note On",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "65",
+                    "Velocity": "*"
+                }
+            }
+        },
+        {
+            "Name": "Tom Hi D2 Off",
+            "Filter": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "50",
+                    "Velocity": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "None"
+            },
+            "Generator": {
+                "MsgType": "Note Off",
+                "Channel": "*",
+                "Settings": {
+                    "Note": "65",
+                    "Velocity": "*"
+                }
+            }
+        }
+    ]
+}

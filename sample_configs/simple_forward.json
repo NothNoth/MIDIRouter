@@ -1,6 +1,6 @@
 {
-    "SourceDevice": "Faderfox EC4",
-    "DestinationDevice": "Périphérique MIDI USB",
+    "SourceDevice": "SDS9Virt",
+    "DestinationDevice": "Port 1",
     "DefaultPassthrough": true,
     "Verbose": true,
     "Rules": [ ]

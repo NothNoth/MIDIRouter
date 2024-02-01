@@ -121,6 +121,102 @@
                     "Value": "$"
                 }
             }
+        },
+        {
+            "Name": "CC3 (Hall pre delay)",
+            "Filter": {
+                "Name": "Control Change (3)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "3",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 2778,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "3",
+                    "Value": "$"
+                }
+            }
+        },
+        {
+            "Name": "CC4 (Hall Decay)",
+            "Filter": {
+                "Name": "Control Change (4)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "4",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 2778,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "4",
+                    "Value": "$"
+                }
+            }
+        },
+        {
+            "Name": "CC5 (Short Density)",
+            "Filter": {
+                "Name": "Control Change (5)",
+                "MsgType": "Control Change",
+                "Channel": "1",
+                "Settings" : {
+                    "Mode": "CCAh",
+                    "ControllerNumber": "5",
+                    "Value": "*"
+                }
+            },
+            "Transform": {
+                "Mode": "LinearDrop",
+                "FromMin": 0,
+                "FromMax": 12900,
+                "ToMin": 0,
+                "ToMax": 127
+            },
+            "Generator": {
+                "Name": "ControlChange rescaled",
+                "MsgType":"Control Change",
+                "Channel": "1",
+                "DropDuplicates": true,
+                "DropDuplicatesTimeoutMs": 1000,
+                "Settings": {
+                    "Mode": "Standard",
+                    "ControllerNumber": "5",
+                    "Value": "$"
+                }
+            }
         }
     ]
 }

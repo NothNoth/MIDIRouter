@@ -11,7 +11,6 @@ import (
 )
 
 type GenPitchWheel struct {
-	name    string
 	channel filter.FilterChannel
 
 	pitchReuse   bool
@@ -23,10 +22,10 @@ type FilterPitchWheelConfig struct {
 	Pitch string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenPitchWheel, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenPitchWheel, error) {
 	var g GenPitchWheel
 	var conf FilterPitchWheelConfig
-	g.name = name
+
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)

@@ -12,8 +12,6 @@ import (
 )
 
 type FilterNoteOff struct {
-	name string
-
 	channel    filter.FilterChannel
 	channelAny bool
 
@@ -29,11 +27,10 @@ type FilterNoteOffConfig struct {
 	Velocity string
 }
 
-func New(name string, channel filter.FilterChannel, config json.RawMessage) (*FilterNoteOff, error) {
+func New(channel filter.FilterChannel, config json.RawMessage) (*FilterNoteOff, error) {
 	var f FilterNoteOff
 	var conf FilterNoteOffConfig
 
-	f.name = name
 	f.channel = channel
 	err := json.Unmarshal([]byte(config), &conf)
 	if err != nil {

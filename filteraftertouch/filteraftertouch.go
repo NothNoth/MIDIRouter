@@ -12,8 +12,6 @@ import (
 )
 
 type FilterAftertouch struct {
-	name string
-
 	channel    filter.FilterChannel
 	channelAny bool
 
@@ -25,11 +23,10 @@ type FilterAftertouchConfig struct {
 	Pressure string
 }
 
-func New(name string, channel filter.FilterChannel, config json.RawMessage) (*FilterAftertouch, error) {
+func New(channel filter.FilterChannel, config json.RawMessage) (*FilterAftertouch, error) {
 	var f FilterAftertouch
 	var conf FilterAftertouchConfig
 
-	f.name = name
 	f.channel = channel
 	err := json.Unmarshal([]byte(config), &conf)
 	if err != nil {

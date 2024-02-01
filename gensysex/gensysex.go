@@ -17,7 +17,6 @@ const (
 )
 
 type GenSysEx struct {
-	name   string
 	mode   Mode
 	prefix []byte
 	suffix []byte
@@ -29,10 +28,9 @@ type FilterSysExConfig struct {
 	Mode   string
 }
 
-func New(name string, settings json.RawMessage) (*GenSysEx, error) {
+func New(settings json.RawMessage) (*GenSysEx, error) {
 	var g GenSysEx
 	var conf FilterSysExConfig
-	g.name = name
 
 	err := json.Unmarshal([]byte(settings), &conf)
 	if err != nil {

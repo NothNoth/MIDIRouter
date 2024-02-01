@@ -44,10 +44,8 @@ type RuleConfig struct {
 	Generator GeneratorConfig
 }
 
-//Example: "program change 52" => 0xC0 0x34 => [0xC=PgmChange | 0x0 : Channel 0 | 0x34 : 52]
+// Example: "program change 52" => 0xC0 0x34 => [0xC=PgmChange | 0x0 : Channel 0 | 0x34 : 52]
 type FilterConfig struct {
-	Name string
-
 	MsgType string //Note On, Note Off, Aftertouch, Control Change..
 	Channel string // 4bits or '*'
 
@@ -122,49 +120,49 @@ func LoadConfig(configPath string) (*router.MIDIRouter, error) {
 
 		switch filterMsgType {
 		case filter.FilterMsgTypeNoteOn:
-			f, err := filternoteon.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filternoteon.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypeNoteOff:
-			f, err := filternoteoff.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filternoteoff.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypeAftertouch:
-			f, err := filteraftertouch.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filteraftertouch.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypeControlChange:
-			f, err := filtercontrolchange.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filtercontrolchange.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypeProgramChange:
-			f, err := filterprogramchange.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filterprogramchange.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypeChannelPressure:
-			f, err := filterchannelpressure.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filterchannelpressure.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetFilter(f)
 			break
 		case filter.FilterMsgTypePitchWheel:
-			f, err := filterpitchwheel.New(r.Filter.Name, ruleChannel, r.Filter.Settings)
+			f, err := filterpitchwheel.New(ruleChannel, r.Filter.Settings)
 			if err != nil {
 				return nil, err
 			}
@@ -199,49 +197,49 @@ func LoadConfig(configPath string) (*router.MIDIRouter, error) {
 
 		switch generateMsgType {
 		case filter.FilterMsgTypeNoteOn:
-			g, err := gennoteon.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := gennoteon.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeNoteOff:
-			g, err := gennoteoff.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := gennoteoff.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeAftertouch:
-			g, err := genaftertouch.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := genaftertouch.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeChannelPressure:
-			g, err := genchannelpressure.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := genchannelpressure.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeControlChange:
-			g, err := gencontrolchange.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := gencontrolchange.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeProgramChange:
-			g, err := genprogramchange.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := genprogramchange.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypePitchWheel:
-			g, err := genpitchwheel.New(r.Generator.Name, generatorChannel, r.Generator.Settings)
+			g, err := genpitchwheel.New(generatorChannel, r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}
 			newRule.SetGenerator(g)
 		case filter.FilterMsgTypeSysEx:
-			g, err := gensysex.New(r.Generator.Name, r.Generator.Settings)
+			g, err := gensysex.New(r.Generator.Settings)
 			if err != nil {
 				return nil, err
 			}

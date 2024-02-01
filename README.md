@@ -55,8 +55,7 @@ I'm setting up a set of Use cases with their associated configuration file.
 
   - ["Simple Forward from a MIDI interface to another"](https://radix-studio.fr/blog/2021/04/16/midirouter-by-example/)
   - ["Note On / Note Off forward only"](https://radix-studio.fr/blog/2021/04/16/midirouter-by-example/)
-  - "Pitch Bend MIDI channel remap" (soon)
-  - "Transform a Pitch Bend to an Aftertouch event" (soon)
+  - ["Transform a Pitch Bend to an Aftertouch event (and change MIDI channel)"](https://radix-studio.fr/blog/2021/04/16/midirouter-by-example-part2/)
   - "Using notes to emit Program Change events" (soon)
   - "Generate a Sysex message from a Control Change event" (soon)
   - "Using Transform to change value ranges" (soon)

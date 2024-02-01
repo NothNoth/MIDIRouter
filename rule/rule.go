@@ -89,7 +89,7 @@ func (r *Rule) SetGenerator(g generatorinterface.GeneratorInterface) error {
 	return nil
 }
 
-func (r *Rule) Match(packet coremidi.Packet) (RuleMatchResult, coremidi.Packet) {
+func (r *Rule) Match(packet coremidi.Packet, verbose bool) (RuleMatchResult, coremidi.Packet) {
 	msgType := filter.FilterMsgType((packet.Data[0] & 0xF0) >> 4)
 	channel := filter.FilterChannel(packet.Data[0] & 0x0F)
 	if r.filter.QuickMatch(msgType, channel) == false {
@@ -102,16 +102,18 @@ func (r *Rule) Match(packet coremidi.Packet) (RuleMatchResult, coremidi.Packet) 
 	}
 
 	if result == filterinterface.FilterMatchResult_MatchNoValue {
-		fmt.Println("Filter match (no value)")
+		if verbose {
+			fmt.Println("Filter match (no value)")
+		}
 		return RuleMatchResultMatchNoInject, packet
 	}
 	if result != filterinterface.FilterMatchResult_Match {
 		return RuleMatchResultNoMatch, packet
 	}
-
-	fmt.Println("Filter", r.filter, "matched. Extracted value:", value)
-	fmt.Println("-> Extracted value:", value)
-
+	if verbose {
+		fmt.Println("Filter", r.String(), "matched. Extracted value:", value)
+		fmt.Println("-> Extracted value:", value)
+	}
 	//Transform
 	switch r.transform.mode {
 	case TransformModeLinear:
@@ -165,7 +167,9 @@ func (r *Rule) Match(packet coremidi.Packet) (RuleMatchResult, coremidi.Packet) 
 		if r.transform != TransformNone {
 			fmt.Println("-> Converted value: ", value)
 		}*/
-
+	if verbose {
+		fmt.Println("-> Transformed value:", value)
+	}
 	//Drop?
 	if r.dropDuplicates && (r.lastValue == value) && (time.Since(r.lastValueTs) < r.dropDuplicatesTimeout) {
 		fmt.Println("-> Ignored duplicate")

@@ -11,7 +11,6 @@ import (
 )
 
 type GenChannelPressure struct {
-	name    string
 	channel filter.FilterChannel
 
 	pressureReuse   bool
@@ -23,10 +22,10 @@ type FilterChannelPressureConfig struct {
 	Pressure string
 }
 
-func New(name string, channel filter.FilterChannel, settings json.RawMessage) (*GenChannelPressure, error) {
+func New(channel filter.FilterChannel, settings json.RawMessage) (*GenChannelPressure, error) {
 	var g GenChannelPressure
 	var conf FilterChannelPressureConfig
-	g.name = name
+
 	g.channel = channel
 
 	err := json.Unmarshal([]byte(settings), &conf)
