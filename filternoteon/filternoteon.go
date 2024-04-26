@@ -28,7 +28,7 @@ type FilterNoteOnConfig struct {
 }
 
 const (
-	highNibble = 0x80
+	highNibble = 0x90
 )
 
 func New(channel filter.FilterChannel, config json.RawMessage) (*FilterNoteOn, error) {
