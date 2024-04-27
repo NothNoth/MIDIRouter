@@ -4,8 +4,8 @@ type FilterMsgType uint8
 
 const (
 	FilterMsgTypeUnknown         = 0x0
-	FilterMsgTypeNoteOn          = 0x8
-	FilterMsgTypeNoteOff         = 0x9
+	FilterMsgTypeNoteOff         = 0x8
+	FilterMsgTypeNoteOn          = 0x9
 	FilterMsgTypeAftertouch      = 0xA
 	FilterMsgTypeControlChange   = 0xB
 	FilterMsgTypeProgramChange   = 0xC
