@@ -8,8 +8,13 @@ import (
 	"github.com/youpy/go-coremidi"
 )
 
+const (
+	version = "1.2"
+)
+
 func main() {
 	if len(os.Args) != 2 {
+		fmt.Printf("MIDIRouter v%s\n", version)
 		fmt.Println("Usage:", os.Args[0], "<config file>")
 		fmt.Println("MIDI inputs:")
 		sources, err := coremidi.AllSources()
