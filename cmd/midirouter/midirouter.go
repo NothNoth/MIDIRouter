@@ -17,7 +17,7 @@ func main() {
 			panic(err)
 		}
 		for _, source := range sources {
-			fmt.Println("  " + source.Manufacturer() + "/" + source.Name())
+			fmt.Println("  " + source.Entity().Device().Name() + "/" + source.Manufacturer() + "/" + source.Name())
 		}
 
 		fmt.Println("MIDI outputs:")
