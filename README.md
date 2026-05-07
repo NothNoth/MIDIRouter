@@ -6,8 +6,8 @@ MIDI Router is an advanced MIDI routing system for MacOS.
 
 In short, MIDIRouter is able to:
 
-  - Watch for MIDI messages on an input interface
-  - Replay or not these eventually transformed messages on an output MIDI interface
+  - Watch for MIDI messages on an input interface (physical or virtual)
+  - Replay or not these eventually transformed messages on an output MIDI interface (physical or virtual)
 
 __Mmhh-kay.. can you give me some examples?"__
 
@@ -26,18 +26,6 @@ __Hey, but can I transform a Control Change message with number 4 received on Ch
 Yes, you can!
 
 Well, now you got the idea :)
-
-## Licensing
-
-MIDIRouter is __free for personal use__ (artists, hobbyists, just-want-to-try-ists).
-
-For __commercial and professional use__ I'll ask for a 50€ fee that will give you access to:
-
-  - Pre-Compiled binaries
-  - Software support
-  - Configuration support
-
-For licensing questions, contact me at __midirouter [at] radix-studio.fr__
 
 ## Future work
 
@@ -59,6 +47,8 @@ I'm setting up a set of Use cases with their associated configuration file.
   - "Using notes to emit Program Change events" (soon)
   - "Generate a Sysex message from a Control Change event" (soon)
   - "Using Transform to change value ranges" (soon)
+
+The **sample_configs** folders contains a few examples such as converting general MIDI drum notes to a Simmons SDS9 midi configuration.
 
 # Configuration
 

@@ -1,5 +1,5 @@
 {
-    "SourceDevice": "Apple Inc./SDS9Virt",
+    "SourceDevice": "Gestionnaire IAC/Apple Inc./Bus 1",
     "DestinationDevice": "ESI Audiotechnik GmbH/Port 1",
     "DefaultPassthrough": false,
     "Verbose": true,
@@ -20,7 +20,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "40",
+                    "Note": "43",
                     "Velocity": "*"
                 }
             }
@@ -41,7 +41,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "40",
+                    "Note": "43",
                     "Velocity": "*"
                 }
             }
@@ -63,7 +63,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "40",
+                    "Note": "43",
                     "Velocity": "*"
                 }
             }
@@ -85,7 +85,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "40",
+                    "Note": "43",
                     "Velocity": "*"
                 }
             }
@@ -107,7 +107,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "45",
+                    "Note": "48",
                     "Velocity": "*"
                 }
             }
@@ -129,7 +129,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "45",
+                    "Note": "48",
                     "Velocity": "*"
                 }
             }
@@ -151,7 +151,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "45",
+                    "Note": "48",
                     "Velocity": "*"
                 }
             }
@@ -173,7 +173,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "45",
+                    "Note": "48",
                     "Velocity": "*"
                 }
             }
@@ -195,7 +195,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -217,7 +217,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -239,7 +239,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -261,7 +261,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -283,7 +283,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -305,7 +305,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "50",
+                    "Note": "53",
                     "Velocity": "*"
                 }
             }
@@ -327,7 +327,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "55",
+                    "Note": "58",
                     "Velocity": "*"
                 }
             }
@@ -349,7 +349,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "55",
+                    "Note": "58",
                     "Velocity": "*"
                 }
             }
@@ -371,7 +371,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "55",
+                    "Note": "58",
                     "Velocity": "*"
                 }
             }
@@ -393,7 +393,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "55",
+                    "Note": "58",
                     "Velocity": "*"
                 }
             }
@@ -415,7 +415,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "60",
+                    "Note": "63",
                     "Velocity": "*"
                 }
             }
@@ -437,7 +437,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "60",
+                    "Note": "63",
                     "Velocity": "*"
                 }
             }
@@ -459,7 +459,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "60",
+                    "Note": "63",
                     "Velocity": "*"
                 }
             }
@@ -481,7 +481,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "60",
+                    "Note": "63",
                     "Velocity": "*"
                 }
             }
@@ -525,7 +525,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "65",
+                    "Note": "68",
                     "Velocity": "*"
                 }
             }
@@ -547,7 +547,7 @@
                 "MsgType": "Note On",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "65",
+                    "Note": "68",
                     "Velocity": "*"
                 }
             }
@@ -569,7 +569,7 @@
                 "MsgType": "Note Off",
                 "Channel": "*",
                 "Settings": {
-                    "Note": "65",
+                    "Note": "68",
                     "Velocity": "*"
                 }
             }
